@@ -22,7 +22,7 @@ RUN cd /home/pimatic-app/node_modules/pimatic && npm link
 COPY config_default.json /home/pimatic-app/config.json
 
 ####### Start the pimatic service #######
-ENTRYPOINT cd /home/pimatic-app && pimatic.js
+ENTRYPOINT cd /home/pimatic-app && pimatic.js start && tail -f pimatic-daemon.log
 
 # Expose pimatic port e.g. 80
 EXPOSE 80
