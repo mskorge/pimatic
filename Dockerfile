@@ -20,6 +20,7 @@ RUN cd /home/pimatic-app/node_modules/pimatic && npm link
 
 ####### Copy the default config to our installation #######
 COPY config_default.json /home/pimatic-app/config.json
+RUN touch /home/pimatic-app/pimatic-daemon.log
 
 ####### Start the pimatic service #######
 ENTRYPOINT cd /home/pimatic-app && pimatic.js start && tail -f pimatic-daemon.log
