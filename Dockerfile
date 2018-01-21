@@ -28,7 +28,8 @@ RUN chown root:root /etc/init.d/pimatic
 RUN update-rc.d pimatic defaults
 
 ####### Link the persistent config.json file and start the pimatic service #######
-CMD rm /home/pimatic-app/config.json && ln -s /home/pimatic-app/configMount/config-json-pimatic.json /home/pimatic-app/config.json && service pimatic start && bash
+#CMD rm /home/pimatic-app/config.json && ln -s /home/pimatic-app/configMount/config-json-pimatic.json /home/pimatic-app/config.json && service pimatic start && bash
+CMD service pimatic start
 
 # Expose pimatic port e.g. 80
 EXPOSE 80
